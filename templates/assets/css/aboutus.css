@@ -1,0 +1,143 @@
+/* --------------------------------------------------------	*/
+@import url("./assets/bootstrap/bootstrap.min.css")
+
+
+.circle {
+    font-weight: 700;
+    display: inline-block;
+    width: 52px;
+    line-height: 50px;
+    color: #fff;
+    font-size: 28px;
+    margin-top: 10px;
+    background: #f30;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-right: 10px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding;
+    background-clip: padding-box;
+}
+
+.member {
+    background: url(../img/member-separator.png) 180px center no-repeat;
+    padding: 0 40px 26px 242px;
+    border-bottom: 0 dotted #ddd;
+    position: relative;
+    min-height: 128px;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    -o-box-shadow: none;
+    box-shadow: none;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding;
+    background-clip: padding-box;
+}
+
+.member:hover .member-networks a {
+    color: #72c02c;
+}
+
+.member .member-avatar {
+    position: absolute;
+    top: 50%;
+    left: 30px;
+    margin-top: -64px;
+    width: 128px;
+    height: 128px;
+    background: #fff;
+    padding: 4px;
+    overflow: hidden;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding;
+    background-clip: padding-box;
+    -webkit-transition: background .1s ease-in;
+    -moz-transition: background .1s ease-in;
+    -ms-transition: background .1s ease-in;
+    -o-transition: background .1s ease-in;
+    transition: background .1s ease-in;
+    -webkit-box-shadow: 0 0 6px rgba(0,0,0,.3);
+    -moz-box-shadow: 0 0 6px rgba(0,0,0,.3);
+    -o-box-shadow: 0 0 6px rgba(0,0,0,.3);
+    box-shadow: 0 0 6px rgba(0,0,0,.3);
+}
+
+.member .member-avatar img {
+    height: 128px;
+    width: 128px;
+    -webkit-border-radius: 128px;
+    -moz-border-radius: 128px;
+    border-radius: 128px;
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding;
+    background-clip: padding-box;
+}
+
+.member:hover .member-avatar {
+    background: #72c02c;
+    padding: 10px;
+    left: 24px;
+    margin-top: -70px;
+}
+
+.member .member-name {
+    margin: 0;
+    color: #0082CC;
+}
+
+.member .member-position {
+    color: #aaa;
+    margin: 0 0 10px 0;
+}
+
+.member .member-networks a {
+    font-size: 20px;
+    line-height: 1.6em;
+    margin: 0 10px 0 0;
+    color: #666;
+}
+
+.member .member-bio {
+    font-size: .9em;
+    color: #666;
+}
+
+@media (max-width: 767px) {
+    .member {
+        padding: 0;
+        background: 0;
+        margin: 0;
+    }
+
+    .member .member-avatar,.member:hover .member-avatar {
+        top: 0;
+        left: 0;
+        margin: 0;
+        padding: 4px;
+    }
+
+    .member .member-avatar,.member .member-avatar img {
+        height: 84px;
+        width: 84px;
+        -webkit-border-radius: 84px;
+        -moz-border-radius: 84px;
+        border-radius: 84px;
+    }
+
+    .member-bio {
+        padding: 20px 0;
+    }
+
+    .member-name,.member-position,.member-networks {
+        padding-left: 112px;
+    };
+}

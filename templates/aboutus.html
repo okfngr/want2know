@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+ <!--[if IE 7]> <html lang="en" class="ie7"> </html><![endif]-->  
+ <!--[if IE 8]> <html lang="en" class="ie8"> </html><![endif]-->  
+ <!--[if IE 9]> <html lang="en" class="ie9"> </html><![endif]-->  
+ <!--[if !IE]><!-->  <html lang="en">  <!--<![endif]-->  
+ <head>
+     <title>Θέλω να ξέρω</title>
+
+     <!-- Meta -->
+     <meta charset="utf-8" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <meta name="description" content="" />
+
+     <!-- CSS -->
+     <link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.min.css" />
+     <link rel="stylesheet" href="./assets/css/style.css" />
+     <link rel="stylesheet" href="./assets/css/menu/style-menu.css" />
+     <link rel="stylesheet" href="./assets/bootstrap/css/bootstrap-responsive.min.css" />
+     <link rel="stylesheet" href="./assets/css/style_responsive.css" />
+     <link rel="stylesheet" href="./assets/font-awesome/css/font-awesome.css" />
+     <link href="./assets/css/aboutus.css" rel="stylesheet" type="text/css">
+
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>   
+
+ <body>
+ <!--=== Top ===-->    
+ <div id="top">
+     <div class="container">            
+        {% if user %}
+            <ul class="inline pull-right">
+                <li>{{user.username}},</li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        {% else %}
+            <ul id="loginbar" class="pull-right">  
+                <li class="devider">&nbsp; </li>
+                <li><a href="/registration" class="login-btn">Εγγραφή </a></li>    
+                <li class="devider">&nbsp; </li>
+                <li><a href="/login" class="login-btn">Είσοδος </a></li>   
+            </ul>
+        {% endif %}
+     </div>     
+ </div><!--/top-->
+
+ <!--=== Header ===-->
+ <div id="header">              
+     <div class="container">    
+         <!-- Logo -->      
+         <div id="logo">                                                
+             <a href="/"><img src="./assets/img/logo.jpg" alt="Logo" /></a>
+         </div><!-- /logo -->       
+                                    
+         <!-- Menu -->      
+         <div class="navbar">                               
+             <div class="navbar-inner">                                 
+                 <ul class="nav top-2">
+                     <li><a href="/">Αρχική</a></li>
+                     <li><a href="/questions">Ερωτήσεις</a></li>
+                     <li><a href="/applications">Εφαρμογές</a></li>
+                     <li><a href="#" class="dropdown-toggle" data-toggle="dropdown">Πληροφορίες<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/aboutus">Ποιοι είμαστε;</a></li>
+                            <li><a href="/opendata">Ανοιχτά δεδομένα</a></li>
+                            <li><a href="/faq">Συχνές ερωτήσεις</a></li>
+                            <li><a href="/statistics">Στατιστικά</a></li>
+                        </ul>
+                        <b class="caret-out"></b>
+                     </li>
+                    <li><a href="/contact">Επικοινωνία</a></li>
+                 </ul>
+             </div><!-- /navbar-inner -->
+         </div><!-- /navbar -->                         
+
+     </div><!-- /container -->              
+ </div><!-- /header -->     
+
+ <!--=== Content part ===-->
+ <div id="body">
+     <div class="breadcrumbs margin-bottom-50">
+         <div class="container">
+             
+             <p><button onclick="window.location.href='/askaquestion'" class="btn-u-large pull-right">Κάνε ερώτηση </button></p>          
+             
+             
+         </div><!--/container-->
+     </div><!--/breadcrumbs-->
+
+	 <div class="container">		
+        <div class="headline"><h3>Πως ξεκίνησε</h3></div>
+        <p>Το “ Θέλω να Ξέρω” ξεκίνησε ως ιδέα για την ενημέρωση σχετικά με τα ανοιχτά δεδομένα στην Ελλάδα από τους Β. Βεσκούκη και Χ. Μπράτσα ευελπιστώντας ότι θα δημιουργήσει περισσότερα σύνολα από ανοιχτά δεδομένα των δημοσίων υπηρεσιών. Η υλοποίηση έγινε από μέλη του OKFN Greece και από μεταπτυχιακούς φοιτητές του προγράμματος σπουδών στην Επιστήμη του Διαδικτύου το οποίο διευθύνει ο Καθ. Ιωάννης Αντωνίου.</p>
+
+        <div class="headline"><h3>Η ομάδα</h3></div>
+        <section id="team-members">
+        
+        <article class="member">
+            <h3 class="member-name">Μπράτσας Χαράλαμπος</h3>
+            <h4 class="member-position">Ιnspired by</h4>
+            <p class="member-networks">
+                <a href="https://twitter.com/Bratsas" class="icon-twitter"></a>
+                <a href="http://gr.linkedin.com/pub/charalampos-bratsas/9/52/787" class="icon-linkedin"></a>
+            </p>
+            <p class="member-bio">
+                Ο Δρ Χαράλαμπος Μπράτσας είναι ο ιδρυτής του Ελληνικού παραρτήματος του Open Knowledge Foundation και πρόεδρος του Δ.Σ. Διδάσκει στο MSc της Επιστήμης του Διαδικτύου στο ΑΠΘ και συμμετέχει ως ερευνητής στο εργαστήριο Ιατρικής Πληροφορικής. Κύριοι τομείς ενδιαφέροντός του είναι τα Open Data (Δημιουργός και συντονιστής του Ελληνικού Opan Data Hub), Semantic Web, Social Semantic Web, Linked Data (Συντονιστής της Ελληνικής DBpedia), Data Mining, Big Data και εφαρμογές της Τεχνητής Νοημοσύνης. Είναι επίσης, μεταδιδακτορικός επιστημονικός συνεργάτης στο εργαστήριο Complex Systems Analysis στο τμήμα Μαθηματικών του ΑΠΘ. Κατέχει Πτυχίο Μαθηματικών (1999), μεταπτυχιακό τίτλο σπουδών στην Ιατρική Πληροφορίκη (2001) και διδακτορικό δίπλωμα στην Informatics in Medical Education (2008). Έχει συμμετάσχει σε διάφορα προγράμματα της Ευρωπαϊκής Ένωσης.
+            </p>
+            <div class="member-avatar">
+                <img alt="" src="./assets/img/team/cbratsas.png" />
+            </div>
+        </article>
+
+        <article class="member">
+            <h3 class="member-name">Βεσκούκης, Βασίλειος</h3>
+            <h4 class="member-position">Ιnspired by</h4>
+            <p class="member-networks">
+                
+            </p>
+            <p class="member-bio">
+                Ο Βεσκούκης, Βασίλειος συν-ιδρυτής του Ελληνικού παραρτήματος του Open Knowledge Foundation και μέλος του ΔΣ, είναι Διπλωματούχος Ηλεκτρολόγος Μηχανικός και Μηχανικός Υπολογιστών ΕΜΠ (1991), και Διδάκτωρ Μηχανικός ΕΜΠ (1996). Από το 1987 εργάζεται στο χώρο της πληροφορικής, με αντικείμενα την ανάπτυξη πληροφοριακών συστημάτων, τη διασφάλιση ποιότητας, την ηλεκτρονική εκπαίδευση και διακυβέρνηση, καθώς και τη διαχείριση περιβαλλοντικών κρίσεων. Από το 2006 είναι Επίκουρος Καθηγητής στο Εθνικό Μετσόβιο Πολυτεχνείο. Τα ερευνητικά του ενδιαφέροντα εστιάζονται στα πληροφοριακά συστήματα με έμφαση στην ολοκλήρωση ετερογενών κατανεμημένων συστημάτων για διαχείριση κινδύνων και επιχειρησιακό σχεδιασμό, στη βελτιστοποίηση χωρικά κατανεμημένων δικτυακών συστημάτων και υπηρεσιών, καθώς και στη δυναμική συμπεριφορά σημασιολογικών δικτύων.
+            </p>
+            <div class="member-avatar">
+                <img alt="" src="./assets/img/team/vveskoukis.png" />
+            </div>
+        </article>
+
+        <article class="member">
+            <h3 class="member-name">Βεντούρης Αναστάσιος</h3>
+            <h4 class="member-position">Project Lead & Developer</h4>
+            <p class="member-networks">
+                <a href="https://twitter.com/TasosVentouris" class="icon-twitter"></a>
+                <a href="http://gr.linkedin.com/in/ventourisanastasios/" class="icon-linkedin"></a>
+            </p>
+            <p class="member-bio">
+                O Βεντούρης Αναστάσιος είναι μεταπτυχιακός φοιτητής στο τμήμα της Επιστήμης του Διαδικτύου του Αριστοτέλειου Πανεπιστημίου Θεσσαλονίκης και κατέχει πτυχίο Μαθηματικών (2012). Είναι ενεργό μέλος του Ελληνικού παραρτήματος του Open Knowledge Foundation και Mentor του International Open Knowledge Foundation. Κύριοι τομείς ενδιαφέροντός του είναι τα Open Data, Semantic Web, Big Data, Linked Data, Social Media και Graph Theory.
+            </p>
+            <div class="member-avatar">
+                <img alt="" src="./assets/img/team/aventouris.jpg" />
+            </div>
+        </article>
+
+        <article class="member">
+            <h3 class="member-name">Λιούτα Ζωή</h3>
+            <h4 class="member-position">Community Coordinator</h4>
+            <p class="member-networks">
+            </p>
+            <p class="member-bio">
+                Η Λιούτα Ζωή είναι πτυχιούχος του Τμήματος Μαθηματικών του Αριστοτελείου Πανεπιστημίου Θεσσαλονίκης (Μάρτιος 2012) και μεταπτυχιακή φοιτήτρια στο Τμήμα Επιστήμης του Διαδικτύου του Αριστοτελείου Πανεπιστημίου Θεσσαλονίκης. Είναι ενεργό μέλος του Ελληνικού παραρτήματος του Open Knowledge Foundation και της Ελληνικής Μαθηματικής Εταιρείας.
+            </p>
+            <div class="member-avatar">
+                <img alt="" src="./assets/img/team/zliouta.jpg" />
+            </div>
+        </article>
+
+        <article class="member">
+            <h3 class="member-name">Παπαγεωργίου Μυρτώ</h3>
+            <h4 class="member-position">Community Coordinator</h4>
+            <p class="member-networks">
+            </p>
+            <p class="member-bio">
+                Η Παπαγεωργίου Μυρτώ είναι μεταπτυχιακή φοιτήτρια στο τμήμα της Επιστήμης του Διαδικτύου του ΑΠΘ και κατέχει πτυχίο μαθηματικών (2012). Είναι ενεργό μέλος του Ελληνικού παραρτήματος του Open Knowledge Foundation και OKFN Greece Chapter Community Coordinator. Είναι ενεργό μέλος της Μαθηματικής Εταιρείας και ασχολείται με την εκπαίδευση και τη διδασκαλία των μαθηματικών.
+            </p>
+            <div class="member-avatar">
+                <img alt="" src="./assets/img/team/mpapageorgiou.jpg" />
+            </div>
+        </article>
+
+        <article class="member">
+            <h3 class="member-name">Χορόζογλου Δημήτρης</h3>
+            <h4 class="member-position">Community Coordinator</h4>
+            <p class="member-networks">
+            </p>
+            <p class="member-bio">
+                Ο Χορόζογλου Δημήτρης είναι κάτοχος πτυχίου μαθηματικών από το Αριστοτέλειο Πανεπιστήμιο Θεσσαλονίκης όπου αποφοίτησε τον Μάρτιο του 2012.Είναι ενεργό μέλος του Ελληνικού παραρτήματος του Open Knowledge Foundation.Επίσης είναι μεταπτυχιακός φοιτητής στο μεταπτυχιακό της Επιστήμης του Διαδικτύου του Αριστοτελείου Πανεπιστημίου Θεσσαλονίκης.
+            </p>
+            <div class="member-avatar">
+                <img alt="" src="./assets/img/team/dchorozoglou.jpg" />
+            </div>
+        </article>
+    </section>
+    <div class="headline"><h3>Διοικητικό Συμβούλιο του Ελληνικού Παραρτήματος του OKFN</h3></div>
+    <p>
+        <ul>
+    <li>Δρ. <a href="http://webscience.auth.gr/?q=content/bratsas-charalampos">Χαράλαμπος Μπράτσας</a>, Αριστοτέλειο Πανεπιστήμιο Θεσσαλονίκης</li>
+    <li>Καθ. <a href="http://webscience.auth.gr/?q=content/antoniou-ioannis">Ιωάννης Αντωνίου</a>, Διευθυντής του Π.Μ.Σ Επιστήμης του Διαδικτύου, Αριστοτέλειο Πανεπιστήμιο Θεσσαλονίκης</li>
+    <li>Καθ.<a href="http://lomiweb.med.auth.gr/mei/index.php?option=com_content&amp;view=article&amp;id=51&amp;Itemid=55&amp;lang=el"> Παναγιώτης Μπαμίδης</a>, Πληροφορική στην Ιατρική Εκπαίδευση, Αριστοτέλειο Πανεπιστήμιο Θεσσαλονίκης</li>
+    <li>Καθ.<a href=""> Δρ Σωτήρης Ζυγιάρης</a>, Urban Development and Innovation Policy, Αριστοτέλειο Πανεπιστήμιο Θεσσαλονίκης</li>
+    <li>Καθ.<a href="http://www.digitalenlightenment.org/index.php/about/item/108"> Γεώργιος Μητακίδης</a>, Πρόεδρος του DIGITAL ENLIGHTENMENT FORUM, Πανεπιστήμιο Πατρών</li>
+    <li>Καθ. <a href="http://ru1.cti.gr/Paul_Spirakis/">Παύλος Σπυράκης</a>, Διευθυντής του Ινστιτούτου Τεχνολογίας Υπολογιστών και Εκδόσεων Διόφαντος</li>
+    <li>Καθ. <a href="http://users.softlab.ece.ntua.gr/~bxb/">Βασίλειος Βεσκούκης</a>, Εθνικό Μετσόβιο Πολυτεχνείο, Αθήνα</li>
+    <li><a href="http://www.marinos.com.gr/">Μαρίνος Παπαδόπουλος</a>, Legal Lead Creative Common Hellas</li>
+    <li><a href="">Αναστασία Μαρτζοπούλου</a>, Urban Development and Innovation Policy</li> 
+</ul>
+</p>
+
+                 
+	 </div><!--/container-->		
+ </div><!--/body-->
+
+ <!--=== Footer ===-->
+ <div class="footer">
+     <div class="container">
+
+         <div class="row-fluid">
+
+            <div class="span4">
+                 <div class="headline"><h3>Πληροφορίες </h3></div>   
+                 <ul class="unstyled">
+                     <li><a href="/aboutus">Ποιοί Είμαστε;</a></li>
+                     <li><a href="/applications">Εφαρμογές για ανοιχτά δεδομένα</a></li>
+                     <li><a href="/faq">Συχνές ερωτήσεις</a></li>
+                     <li><a href="/opendata">Ανοιχτά Δεδομένα</a></li>
+                     <li><a href="/statistics">Στατιστικά</a></li>
+                 </ul>
+             </div><!--/span4-->
+             <div class="span4">      
+                 <!-- Newsletter -->
+                 <div class="headline"><h3>Newsletter </h3></div>   
+                 <p>Κάντε εγγραφή στο Newsletter και μάθετε πρώτοι τα νέα μας </p>
+                 <form action="/newsletter" method="post" class="form-inline" />
+                     <div class="input-append">
+                         <input type="email" placeholder="Email Address" class="span8 border-radius-none" name="email" />
+                         <button class="btn-u">Εγγραφή </button>
+                     </div>
+                 </form>                            
+             </div>
+
+             <div class="span4">
+                 <ul class="unstyled">
+                    <li><a href="http://gr.okfn.org"><img src="./assets/img/okflogo.png"/></a></li>
+                     <li><p>An Open Knowledge Foundation Greece project.</p></li>
+                     <li><p>© 2013 want2know</li>
+                     <li><!-- Open Knowledge Link -->
+                        <a href="http://opendefinition.org/">
+                        <img alt="This material is Open Knowledge" border="0"
+                        src="http://assets.okfn.org/images/ok_buttons/ok_80x15_blue.png" /></a>
+                        <!-- /Open Knowledge Link --><!-- Open Content Link -->
+<a href="http://opendefinition.org/">
+  <img alt="This material is Open Content" border="0"
+  src="http://assets.okfn.org/images/ok_buttons/oc_80x15_blue.png" />
+</a>
+<!-- /Open Content Link -->
+</li>
+
+                 </ul>
+             </div><!--/span4-->
+         </div><!--/row-fluid-->    
+
+     </div><!--/container-->    
+ </div><!--/footer-->   
+
+ <!--=== copyright ===-->
+ <div class="copyright">
+     <div class="container">
+
+         <div class="row-fluid">
+             <div class="span8">                        
+                <p>2013 &copy; want2know <a href="/privacy">Privacy Policy </a> |  <a href="/termsofuse">Terms of use </a></p>             
+             </div>
+             
+         </div><!--/row-fluid-->
+
+     </div><!--/container-->    
+ </div><!--/copyright-->       
+
+ <!-- JS and jQuery -->         
+  <script type="text/javascript" src="./assets/js/jquery-1.8.2.min.js"></script>
+ <script type="text/javascript" src="./assets/bootstrap/js/bootstrap.min.js"></script> 
+ <!--[if lt IE 9]>
+    <script src="./assets/js/respond.js"></script>
+<![endif]-->        
+     
+ </body>
+ </html>     

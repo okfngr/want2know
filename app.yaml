@@ -1,0 +1,25 @@
+application: thelw-na-kserw
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+default_expiration: "2d"
+
+handlers:
+- url: /favicon.ico
+  static_files: templates/assets/img/favicon.ico
+  upload: assets/img/favicon.ico
+
+- url: /assets
+  static_dir: templates/assets
+  expiration: "1d"
+
+- url: .*
+  script: main.app
+
+libraries:
+- name: webapp2
+  version: "2.5.2"
+- name: jinja2
+  version: latest

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+ <!--[if IE 7]> <html lang="en" class="ie7"> </html><![endif]-->  
+ <!--[if IE 8]> <html lang="en" class="ie8"> </html><![endif]-->  
+ <!--[if IE 9]> <html lang="en" class="ie9"> </html><![endif]-->  
+ <!--[if !IE]><!-->  <html lang="en">  <!--<![endif]-->  
+ <head>
+     <title>Θέλω να ξέρω</title>
+
+     <!-- CSS -->
+     <link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.min.css" />
+     <link rel="stylesheet" href="./assets/bootstrap/css/bootstrap-responsive.min.css" />
+     <link rel="stylesheet" href="./assets/font-awesome/css/font-awesome.css" />
+     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>	
+
+ <body>
+    {% if user.position == "admin" %}
+    <div class="container">
+        <div class="well"><h2>Admin panel</h2></div>
+            
+
+        <div class="span5 well">
+            <h3>Add an Application</h3>
+            <form method="post" enctype="multipart/form-data">
+                <label>Title</label>
+                <input type="text" required name="title"/>
+                <label>Description</label>
+                <input class="input-xlarge span5" rows="10" type="textarea" required name="description"/>
+                <label>External link</label>
+                <input type="text" required name="externallink"/>
+                <label>Author</label>
+                <input type="text" required name="author"/>
+                <label>Tags</label>
+                <input type="text" autocomplete="off" data-items="6" data-provide="typeahead" name="tags" placeholder="Tags" style="width:9em;" class="input-medium tm-input tm-input-success" data-original-title=""/>
+                <label>Image</label>
+                <span>
+                    <input type="file" name="image">
+                </span>
+                <br>
+                <button class="btn btn-block btn-success" type="submit">Καταχώρηση </button>
+        </div>
+
+        <div class="span5 well">
+            <h3>Contact</h3>
+            {% for contact in contacts %}
+                <div>
+                    <b>Name:</b> {{contact.name}}
+                    <br>
+                    <b>Email:</b> {{contact.email}}
+                    <br>
+                    <b>Subject:</b> {{contact.subject}}
+                    <br>
+                    <b>Text:</b> {{contact.message}}
+                </div>
+                <br>
+            {% endfor %}
+
+        </div>
+    </div>
+
+
+
+
+    {% endif %}
+         
+
+ <!-- JS and jQuery -->			
+ <script type="text/javascript" src="./assets/js/jquery-1.8.2.min.js"></script>		
+ <script type="text/javascript" src="./assets/bootstrap/js/bootstrap.min.js"></script>	
+ <script src="./assets/js/tagmanager.js"></script>
+ <script>
+  jQuery(document).ready(function () {
+    prettyPrint();
+  });
+
+  jQuery(".tm-input:eq(0)").tagsManager({
+    typeahead: true,
+    typeaheadAjaxSource: null,
+    typeaheadSource: ["Αθλητισμός", "Εκπαίδευση", "Επιστήμες", "Καιρός", "Κοινωνικά", "Μεταφορές", "Οικονομία", "Περιβάλλον", "Πολιτική","Πολιτισμός", "Στατιστικά", "Τεχνολογία", "Υγεία", "Auto-moto","Lifestyle","Media"],
+    blinkBGColor_1: '#FFFF9C',
+    blinkBGColor_2: '#CDE69C',
+    hiddenTagListName: 'HiddenTags',
+    onlyTagList: true
+  });
+                          
+</script>
+
+
+ 	
+ </body>
+ </html>	 

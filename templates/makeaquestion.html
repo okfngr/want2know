@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+ <!--[if IE 7]> <html lang="en" class="ie7"> </html><![endif]-->  
+ <!--[if IE 8]> <html lang="en" class="ie8"> </html><![endif]-->  
+ <!--[if IE 9]> <html lang="en" class="ie9"> </html><![endif]-->  
+ <!--[if !IE]><!-->  <html lang="en">  <!--<![endif]-->  
+ <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+     <title>Θέλω να ξέρω</title>
+
+     <!-- Meta -->
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <meta name="description" content="" />
+
+     <!-- CSS -->
+     <link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.min.css" />
+     <link rel="stylesheet" href="./assets/css/style.css" />
+     <link rel="stylesheet" href="./assets/css/menu/style-menu.css" />
+     <link rel="stylesheet" href="./assets/bootstrap/css/bootstrap-responsive.min.css" />
+     <link rel="stylesheet" href="./assets/css/style_responsive.css" />
+     <link rel="stylesheet" href="./assets/font-awesome/css/font-awesome.css" />
+     <link rel="stylesheet" type="text/css" href="./assets/wysihtml5/src/bootstrap-wysihtml5.css"></link>
+     <link rel="stylesheet" type="text/css" href="./assets/css/tagmanager.css"></link>
+    
+
+     
+ </head>	
+
+ <body>
+ <!--=== Top ===-->    
+ <div id="top">
+     <div class="container">            
+        {% if user %}
+            <ul class="inline pull-right">
+                <li>{{user.username}},</li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        {% else %}
+            <ul id="loginbar" class="pull-right">  
+                <li class="devider">&nbsp; </li>
+                <li><a href="/registration" class="login-btn">Εγγραφή </a></li>    
+                <li class="devider">&nbsp; </li>
+                <li><a href="/login" class="login-btn">Είσοδος </a></li>   
+            </ul>
+        {% endif %}
+     </div>     
+ </div><!--/top-->
+
+ <!--=== Header ===-->
+ <div id="header">              
+     <div class="container">    
+         <!-- Logo -->      
+         <div id="logo">                                                
+             <a href="/"><img src="./assets/img/logo.jpg" alt="Logo" /></a>
+         </div><!-- /logo -->       
+                                    
+         <!-- Menu -->      
+         <div class="navbar">                               
+             <div class="navbar-inner">                                 
+                 <ul class="nav top-2">
+                     <li><a href="/">Αρχική</a></li>
+                     <li><a href="/questions">Ερωτήσεις</a></li>
+                     <li><a href="/applications">Εφαρμογές</a></li>
+                     <li><a href="#" class="dropdown-toggle" data-toggle="dropdown">Πληροφορίες<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/aboutus">Ποιοι είμαστε;</a></li>
+                            <li><a href="/opendata">Ανοιχτά δεδομένα</a></li>
+                            <li><a href="/faq">Συχνές ερωτήσεις</a></li>
+                            <li><a href="/statistics">Στατιστικά</a></li>
+                        </ul>
+                        <b class="caret-out"></b>
+                     </li>
+                    <li><a href="/contact">Επικοινωνία</a></li>
+                 </ul>
+             </div><!-- /navbar-inner -->
+         </div><!-- /navbar -->                         
+
+     </div><!-- /container -->              
+ </div><!-- /header -->     
+
+ <!--=== Content part ===-->
+ <div id="body">
+     <div class="breadcrumbs margin-bottom-50">
+        <div class="container">
+            <h3>Ποια ανοιχτά δεδομένα θα ήθελες να ξέρεις;</h3>
+        </div>
+     </div><!--/breadcrumbs-->
+     
+	 <div class="container">
+        <form action="/searchquestion" method="post" class="form-inline pull-right">
+                <div class="input-append pull-right">
+                    <input type="text" required name="keyword" class="span3" />
+                    <button type="submit" name = "findquestionbutton" value="active" class="btn-u"><i class="icon-search"></i> Ψάξε </button>
+                </div>
+            </form>
+            
+        <div class="span6">{{error|safe}}</div>		
+		<div class="row-fluid margin-bottom-10">
+
+        	<div class="span7 box">
+                <form class="form-horizontal"  method="post">
+                    <label><b>Τίτλος</b> </label>
+                    <input required name="title" value= "Θέλω να ξέρω " class="span9 border-radius-none" type="text" placeholder="Text input">
+                    <br><br>
+                    <label><b>Κατηγορίες</b> </label>
+                
+                    <input type="text" autocomplete="off" data-items="6" data-provide="typeahead" name="tags" placeholder="Tags" style="width:9em;" class="input-medium tm-input tm-input-success" data-original-title=""/>
+
+                    <br>
+                 
+                    <br>
+                    <textarea id="textarea" required name="message" class="span10 border-radius-none" rows="8"></textarea>
+                    <br>
+                    <br><br><br>
+                    {% if not user %}
+                        <div class="alert alert-error span6">
+                            <button type="button" class="close" data-dismiss="alert">&times; </button>
+                            <strong>Προσοχή! </strong> Για να κάνεις ερώτηση θα πρέπει να έχεις εγγραφεί στο site.
+                        </div>
+                    {% else %}
+                        <p><button type="submit" class="btn-u">Αποστολή </button></p>
+                    {% endif %}
+                    
+                </form> 
+            </div>
+            <div class="span5">
+                <div class="alert alert-info">
+                    <p>Αν ψάχνεις ανοιχτά δεδομένα ή θα ήθελες να υπάρχουν στο μέλλον, δημιούργησε την ερώτηση και δημοσίευσέ την στα κοινωνικά δίκτυα ώστε να αποκτήσει πολλές ψήφους</p>
+                </div>
+                <div class="alert alert-info">
+                    <p>Διάλεξε μία ή περισσότερες από τις παρακάτω κατηγορίες: "Αθλητισμός", "Εκπαίδευση", "Επιστήμες", "Καιρός", "Κοινωνικά", "Μεταφορές", "Οικονομία", "Περιβάλλον", "Πολιτική","Πολιτισμός", "Στατιστικά", "Τεχνολογία", "Υγεία", "Auto-moto","Lifestyle","Media"</p>
+                </div>
+                <div class="alert alert-info">
+                    <p>Δώστε όσες το δυνατόν περισσότερες λεπτομέρειες ώστε να καταλάβουν όλοι τα ανοιχτά δεδομένα που περιγράφεις</p>
+                </div>
+            </div>
+         </div><!--/row-fluid-->
+	 </div><!--/container-->		
+ </div><!--/body-->
+
+ <!--=== Footer ===-->
+ <div class="footer">
+     <div class="container">
+
+         <div class="row-fluid">
+
+            <div class="span4">
+                 <div class="headline"><h3>Πληροφορίες </h3></div>   
+                 <ul class="unstyled">
+                     <li><a href="/aboutus">Ποιοί Είμαστε;</a></li>
+                     <li><a href="/applications">Εφαρμογές για ανοιχτά δεδομένα</a></li>
+                     <li><a href="/faq">Συχνές ερωτήσεις</a></li>
+                     <li><a href="/opendata">Ανοιχτά Δεδομένα</a></li>
+                     <li><a href="/statistics">Στατιστικά</a></li>
+                 </ul>
+             </div><!--/span4-->
+             <div class="span4">      
+                 <!-- Newsletter -->
+                 <div class="headline"><h3>Newsletter </h3></div>   
+                 <p>Κάντε εγγραφή στο Newsletter και μάθετε πρώτοι τα νέα μας </p>
+                 <form action="/newsletter" method="post" class="form-inline" />
+                     <div class="input-append">
+                         <input type="email" placeholder="Email Address" class="span8 border-radius-none" name="email" />
+                         <button class="btn-u">Εγγραφή </button>
+                     </div>
+                 </form>                            
+             </div>
+
+             <div class="span4">
+                 <ul class="unstyled">
+                    <li><a href="http://gr.okfn.org"><img src="./assets/img/okflogo.png"/></a></li>
+                     <li><p>An Open Knowledge Foundation Greece project.</p></li>
+                     <li><p>© 2013 want2know</li>
+                     <li><!-- Open Knowledge Link -->
+                        <a href="http://opendefinition.org/">
+                        <img alt="This material is Open Knowledge" border="0"
+                        src="http://assets.okfn.org/images/ok_buttons/ok_80x15_blue.png" /></a>
+                        <!-- /Open Knowledge Link --><!-- Open Content Link -->
+<a href="http://opendefinition.org/">
+  <img alt="This material is Open Content" border="0"
+  src="http://assets.okfn.org/images/ok_buttons/oc_80x15_blue.png" />
+</a>
+<!-- /Open Content Link -->
+</li>
+
+                 </ul>
+             </div><!--/span4-->
+         </div><!--/row-fluid-->    
+
+     </div><!--/container-->    
+ </div><!--/footer-->   
+
+ <!--=== copyright ===-->
+ <div class="copyright">
+     <div class="container">
+
+         <div class="row-fluid">
+             <div class="span8">                        
+                 <p>2013 &copy; want2know <a href="/privacy">Privacy Policy </a> |  <a href="/termsofuse">Terms of use </a></p>
+             </div>
+            
+         </div><!--/row-fluid-->
+
+     </div><!--/container-->    
+ </div><!--/copyright-->
+ <!-- JS and jQuery -->			
+  <script type="text/javascript" src="./assets/js/jquery-1.8.2.min.js"></script>
+ <script type="text/javascript" src="./assets/bootstrap/js/bootstrap.min.js"></script> 
+ <script src="./assets/wysihtml5/src/wysihtml5-0.3.0.js"></script>
+    <script src="./assets/wysihtml5/src/bootstrap-wysihtml5.js"></script>
+    <script src="./assets/js/tagmanager.js"></script>
+
+    <script>
+        $('#textarea').wysihtml5({
+    "font-styles": true, //Font styling, e.g. h1, h2, etc. Default true
+    "emphasis": true, //Italics, bold, etc. Default true
+    "lists": true, //(Un)ordered lists, e.g. Bullets, Numbers. Default true
+    "html": false, //Button which allows you to edit the generated HTML. Default false
+    "link": true, //Button to insert a link. Default true
+    "image": false, //Button to insert an image. Default true,
+    "color": false //Button to change color of font  
+});
+    </script>
+    <script>
+  jQuery(document).ready(function () {
+    prettyPrint();
+  });
+
+  jQuery(".tm-input:eq(0)").tagsManager({
+    typeahead: true,
+    typeaheadAjaxSource: null,
+    typeaheadSource: ["Αθλητισμός", "Εκπαίδευση", "Επιστήμες", "Καιρός", "Κοινωνικά", "Μεταφορές", "Οικονομία", "Περιβάλλον", "Πολιτική","Πολιτισμός", "Στατιστικά", "Τεχνολογία", "Υγεία", "Auto-moto","Lifestyle","Media"],
+    blinkBGColor_1: '#FFFF9C',
+    blinkBGColor_2: '#CDE69C',
+    hiddenTagListName: 'HiddenTags',
+    onlyTagList: true
+  });
+                          
+</script>
+
+
+
+ <!--[if lt IE 9]>
+	<script src="./assets/js/respond.js"></script>
+<![endif]-->	
+
+
+ </body>
+ </html>	 

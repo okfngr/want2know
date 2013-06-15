@@ -1,0 +1,54 @@
+.qa-vote-first-button,.qa-vote-second-button
+{
+	
+	border: 0;
+	cursor: pointer;
+	display: block;
+	height: 16px;
+	min-width: 24px;
+}
+
+.qa-vote-first-button
+{
+	background: transparent url("/assets/img/up.png") no-repeat;
+}
+
+.qa-vote-second-button
+{
+	background: transparent url("/assets/img/down.png") no-repeat;
+}
+
+.qa-vote-first-button
+{
+	margin: 0 auto 4px;
+}
+
+.qa-vote-second-button
+{
+	margin: 4px auto 0;
+}
+
+.qa-vote-count
+{
+text-align:center;text-shadow:1px 1px 1px #fff
+}
+
+.qa-netvote-count-data
+{
+	display: block;
+	font-size: 24px;
+	font-weight: bold;
+	line-height: 1;
+	padding-top: 1px;
+}
+
+
+.staranswer
+{
+	font-size: 0;
+
+}
+
+
+
+

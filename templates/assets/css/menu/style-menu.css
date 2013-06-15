@@ -1,0 +1,349 @@
+#top
+{
+	padding: 7px 0 8px;
+}
+#loginbar
+{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	z-index: 9999;
+}
+#loginbar li
+{
+	display: inline;
+	list-style: none;
+	padding-bottom: 15px;
+}
+#loginbar li a, 
+#loginbar li a:hover
+{
+	color: #7c8082;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 11px;
+	
+}
+#loginbar li.devider
+{
+	border-right: solid 1px #72c02c;
+	font-family: Tahoma;
+	font-size: 8px;
+	margin: 0 6px 0 2px;
+	padding: 0;
+	position: relative;
+	top: -1px;
+}
+#loginbar i
+{
+	color: #999;
+	cursor: pointer;
+	font-size: 18px;
+	margin-top: 3px;
+}
+#loginbar li ul
+{
+	background: #f0f0f0;
+	border-radius: 3px;
+	display: none;
+	left: -6px;
+	margin: 0;
+	padding-bottom: 4px;
+	padding-top: 4px;
+	position: absolute;
+	top: 30px;
+}
+#loginbar li:hover ul
+{
+	display: block;
+}
+#loginbar li ul li
+{
+	display: list-item;
+	margin-bottom: 1px;
+	padding-bottom: 0;
+	position: relative;
+}
+#loginbar li ul li a
+{
+	background: #f0f0f0;
+	color: #555;
+	display: block;
+	font-size: 10px;
+	min-width: 85px;
+	padding: 2px 12px;
+	text-decoration: none;
+}
+#loginbar li ul li a:hover, 
+#loginbar li ul li.active a
+{
+	background: #fafafa;
+	color: #555;
+	font-size: 10px;
+	opacity: 1;
+	text-shadow: none;
+}
+#loginbar li ul li.active i
+{
+	cursor: default;
+	font-size: 14px;
+	position: absolute;
+	right: -5px;
+	text-shadow: 0 1px 0 #e9e9e9;
+	top: 2px;
+}
+#loginbar i.icon-globe
+{
+	color: #bbb;
+	font-size: 13px;
+	margin: 3px 3px 0 0;
+}
+#loginbar li i.icon-sort-up
+{
+	color: #eee;
+	cursor: default;
+	display: none;
+	font-size: 14px;
+	left: -1px;
+	position: absolute;
+	top: 21px;
+}
+#loginbar li:hover i.icon-sort-up
+{
+	display: block;
+}
+#loginbar li:hover i.icon-ok
+{
+	color: #aaa;
+	top: -2px;
+}
+#header
+{
+	border-bottom: solid 2px #eee;
+	position: relative;
+	z-index: 999;
+}
+#header .container
+{
+	position: relative;
+}
+#logo
+{
+	left: 0;
+	position: absolute;
+	top: -30px;
+}
+.navbar, 
+.navbar-inner, 
+.nav,
+.navbar-inverse
+{
+	background: url('http://want2know.okfn.gr/assets/img/content.png');;
+	border: none;
+	box-shadow: none;
+	filter: none;
+	margin: 0 !important;
+	moz-box-shadow: none;
+	padding: 0;
+	webkit-box-shadow: none;
+}
+.nav i.icon-sort-up
+{
+	bottom: -6px;
+	font-size: 13px;
+	position: absolute;
+}
+.navbar-inner
+{
+	padding-left: 0px !important;
+	padding-right: 0px !important;
+}
+.navbar .nav > li
+{
+	display: block;
+	position: relative;
+}
+.navbar .nav > li > a
+{
+	border-bottom: solid 2px #eee;
+	color: #687074;
+	display: block;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 15px;
+	font-weight: 400;
+	moz-transition: all 0.4s ease-in-out;
+	o-transition: all 0.4s ease-in-out;
+	padding: 9px 20px;
+	text-shadow: none;
+	transition: all 0.4s ease-in-out;
+	webkit-transition: all 0.4s ease-in-out;
+}
+.collapse.in ul
+{
+	margin-top: 10px !important;
+}
+.collapse.in li a
+{
+	background: none;
+	border-bottom: solid 1px #eee;
+	padding: 0 10px;
+}
+.collapse.in li a:hover,
+.collapse.in li a.dropdown-toggle
+{
+	background: none;
+	border-bottom: solid 1px #72c02c !important;
+}
+.collapse.in ul.dropdown-menu
+{
+	margin-bottom: 5px;
+}
+.collapse.in ul.dropdown-menu a
+{
+	border-bottom: solid 1px #bbb;
+	padding: 5px;
+}
+.nav-collapse .nav > li > a, .nav-collapse .dropdown-menu a
+{
+	border-radius: 0 !important;
+	margin: 0 !important;
+}
+.navbar .nav > li > a:focus,
+.navbar .nav > li > a:hover
+{
+	border-bottom: solid 2px #72c02c;
+	color: #72c02c;
+}
+.navbar .nav > .active > a,
+.navbar .nav > .active > a:focus
+{
+	background: none;
+	border-bottom: solid 2px #72c02c;
+	box-shadow: none;
+	color: #72c02c;
+	moz-box-shadow: none;
+	text-decoration: none;
+	webkit-box-shadow: none;
+}
+.navbar .nav > .active > a:hover
+{
+	background: none;
+	border-bottom: solid 2px #72c02c;
+	box-shadow: none;
+	color: #72c02c;
+	moz-box-shadow: none;
+	webkit-box-shadow: none;
+}
+.navbar .nav > li > a .caret
+{
+	border-bottom-color: #72c02c !important;
+	border-top-color: #72c02c!important;
+	margin: 9px 0 0 3px !important;
+}
+.dropdown-menu
+{
+	border: none;
+	border-bottom: solid 2px #687074;
+	border-radius: 0;
+	border-top: solid 2px #72c02c;
+	margin-top: -2px;
+	min-width: 200px;
+	padding: 0;
+	z-index: 9999 !important;
+}
+.dropdown-menu li a
+{
+	border-bottom: solid 1px #eee;
+	color: #687074;
+	font-size: 13px;
+	font-weight: 400;
+	padding: 6px 15px;
+}
+.dropdown-menu li > a:hover,
+.dropdown-menu li > a:focus,
+.dropdown-submenu:hover > a
+{
+	background: #687074 !important;
+	color: #ffffff;
+	filter: none !important;
+	moz-transition: all 0.2s ease-in-out;
+	o-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+	webkit-transition: all 0.2s ease-in-out;
+}
+.dropdown-menu .active > a
+{
+	background: #687074 !important;
+	color: #ffffff !important;
+	filter: none !important;
+}
+.navbar .btn-navbar
+{
+	background: #72c02c;
+	border: none !important;
+	margin-right: 0;
+	margin-top: 1px;
+	padding: 10px 15px;
+}
+.navbar .btn-navbar:hover
+{
+	background: #5fb611;
+}
+.navbar .btn-navbar span, 
+.navbar .btn-navbar:hover span
+{
+	background: #fff !important;
+	box-shadow: none !important;
+}
+.navbar .nav > li > .dropdown-menu:after
+{
+	left: 19px;
+}
+.navbar .nav > li > .dropdown-menu:before
+{
+	border-bottom: none;
+	left: 18px;
+}
+.navbar .nav > li > .dropdown-menu:after
+{
+	border-bottom-color: #72c02c !important;
+	border-top-color: #72c02c !important;
+	left: 19px;
+}
+.navbar .search-open
+{
+	background: #fcfcfc;
+	border-top: solid 2px #eee;
+	display: none;
+	padding: 15px 15px 11px;
+	position: absolute;
+	right: 0;
+	top: 44px;
+}
+.navbar .search-open form
+{
+	margin: 0 !important;
+}
+.navbar a.search i.icon-remove
+{
+	font-size: 18px;
+	position: relative;
+	top: 2px;
+}
+.navbar .nav > li > a.search
+{
+	background: #f7f7f7;
+	border-bottom-color: #aaa;
+	color: #aaa;
+	cursor: pointer;
+	padding: 8px 12px 10px;
+}
+.navbar .nav > li > a.search:hover
+{
+	border-bottom-color: #72c02c;
+	color: #72c02c;
+}
+.fancybox-overlay.fancybox-overlay-fixed
+{
+	z-index: 9999;
+}

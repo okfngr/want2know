@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+ <!--[if IE 7]> <html lang="en" class="ie7"> </html><![endif]-->  
+ <!--[if IE 8]> <html lang="en" class="ie8"> </html><![endif]-->  
+ <!--[if IE 9]> <html lang="en" class="ie9"> </html><![endif]-->  
+ <!--[if !IE]><!-->  <html lang="en">  <!--<![endif]-->  
+ <head>
+     <title>Θέλω να ξέρω</title>
+
+     <!-- Meta -->
+     <meta charset="utf-8" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <meta name="description" content="" />
+
+     <!-- CSS -->
+     <link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.min.css" />
+     <link rel="stylesheet" href="./assets/css/style.css" />
+     <link rel="stylesheet" href="./assets/css/menu/style-menu.css" />
+     <link rel="stylesheet" href="./assets/bootstrap/css/bootstrap-responsive.min.css" />
+     <link rel="stylesheet" href="./assets/css/style_responsive.css" />
+     <link rel="stylesheet" href="./assets/elastislide/css/elastislide.css" type="text/css" />
+     <link rel="stylesheet" href="./assets/font-awesome/css/font-awesome.css" />
+     <link rel="stylesheet" type="text/css" href="./assets/css/jquery.cookiebar.css" />
+     <link rel="stylesheet" href="./assets/js/tinyscrollbar.css" type="text/css" media="screen"/>
+    <link rel="stylesheet" href="./assets/css/votenumber.css" />
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />   
+
+    <meta property="og:image" content="http://want2know.okfn.gr/assets/img/logofb.gif"/>
+
+    
+
+</head>
+ <body>
+ <!--=== Top ===-->    
+ <div id="top">
+     <div class="container">            
+        {% if user %}
+            <ul class="inline pull-right">
+                <li>{{user.username}},</li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        {% else %}
+            <ul id="loginbar" class="pull-right">  
+                <li class="devider">&nbsp; </li>
+                <li><a href="/registration" class="login-btn">Εγγραφή </a></li>    
+                <li class="devider">&nbsp; </li>
+                <li><a href="/login" class="login-btn">Είσοδος </a></li>   
+            </ul>
+        {% endif %}
+     </div>     
+ </div><!--/top-->
+
+ <!--=== Header ===-->
+ <div id="header">              
+     <div class="container">    
+         <!-- Logo -->      
+         <div id="logo">                                                
+             <a href="/"><img src="./assets/img/logo.jpg" alt="Logo" /></a>
+         </div><!-- /logo -->       
+                                    
+         <!-- Menu -->      
+         <div class="navbar">                               
+             <div class="navbar-inner">                                 
+                 <ul class="nav top-2">
+                     <li><a href="/">Αρχική</a></li>
+                     <li><a href="/questions">Ερωτήσεις</a></li>
+                     <li><a href="/applications">Εφαρμογές</a></li>
+                     <li><a href="#" class="dropdown-toggle" data-toggle="dropdown">Πληροφορίες<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/aboutus">Ποιοι είμαστε;</a></li>
+                            <li><a href="/opendata">Ανοιχτά δεδομένα</a></li>
+                            <li><a href="/faq">Συχνές ερωτήσεις</a></li>
+                            <li><a href="/statistics">Στατιστικά</a></li>
+                        </ul>
+                        <b class="caret-out"></b>
+                     </li>
+                    <li><a href="/contact">Επικοινωνία</a></li>
+                 </ul>
+             </div><!-- /navbar-inner -->
+         </div><!-- /navbar -->                         
+
+     </div><!-- /container -->              
+ </div><!-- /header -->     
+
+
+ <!--=== Content part ===-->
+ <div id="body">
+
+     <!-- Purchase Block -->
+     <div class="row-fluid purchase margin-bottom-30">
+         <div class="container">
+			 <div class="span9">
+                 <span> Καλώς ήρθατε στο "Θέλω να ξέρω" </span>
+                 <p>Το θέλω να ξέρω είναι μία ιστοσελίδα ερωτήσεων και απαντήσεων που απευθείνεται σε απλούς πολίτες, προγραμματιστές, ερευνητές, πολιτικούς και δημοσιογράφους. Στόχος της είναι η προώθηση και απόκτηση της γνώσης μέσω των ανοιχτών δεδομένων στην Ελλάδα. Γνώση που αφορά τη διαφάνεια, την καλύτερη διακυβέρνηση, τον πολιτισμό  και την καινοτομία. Με τη βοήθειά σας μπορούμε να δουλέψουμε και να αποκτήσουμε νέα πακέτα δεδομένων του δημόσιου τομέα που αφορούν όλους μας! Μη ξεχνάτε να δηλώνετε τα πακέτα δεδομένων στο μητρώο της ελληνικής πύλης ανοικτών δεδομένων <a href="http://opendatahub.gr"  target="_blank">opendatahub.gr</a></p>
+             </div>
+             <a href="/questions" class="btn-buy hover-effect">Ρώτα και μάθε</a>
+         </div>
+     </div><!--/row-fluid-->
+     <!--//End Purchase Block -->
+
+	 <div class="container">	
+		 <!-- Service Blocks -->
+		 <div class="row-fluid">
+	    	 <div class="span8">
+             <div class="span6">
+	    		 <div class="service clearfix">
+                     <i class="icon-bar-chart"></i>
+	    			 <div class="desc">
+	    				 <h4>Τι ανοιχτά δεδομένα θες να ξέρεις </h4>
+                         <p>Ζήτα και βρες πακέτα ανοιχτών δεδομένων. Ψήφισε τα ανοιχτά δεδομένα που θα ήθελες να έχεις και απάντησε σε ερωτήματα των υπόλοιπων χρηστών...</p>
+	    			 </div>
+	    		 </div>	
+	    	 </div>
+	    	 <div class="span6">
+	    		 <div class="service clearfix">
+                     <i class="icon-cogs"></i>
+	    			 <div class="desc">
+	    				 <h4>Εφαρμογές που έχουν γίνει με ανοιχτά δεδομένα </h4>
+                         <p>Βρες και ψήφισε εφαρμογές που έχουν γίνει με ανοιχτά δεδομένα. Στείλε μας τη δική σου εφαρμογή για να προστεθεί στη λίστα...</p>
+	    			 </div>
+	    		 </div>	
+	    	 </div>
+             <!-- Our Clients -->
+           
+    <div class="headline"><h3>Top 5 ερωτήσεις</h3></div>
+     <div id="s6" class="box" style="width:100%;height:110px;">
+            
+            {% for question in questions %}
+            <div class="container" style="padding: 15px;">
+                <div class="span1">
+                     <div class="questionnumber"><p>{{question.votes}}</p></div>
+                </div>
+                <div class="span6">
+                <a href="/questions/{{question.key().id()}}"><h4><b>{{question.title[:90]}}</b></h4></a>
+                     <p>Κατηγορία:
+                          {% for tag in question.tags %}
+                        <a href="/category/{{tag}}"><span class="label label-success">{{tag}}</span></a>  
+                       {% endfor %}   
+                       | <i class="icon-calendar color-green"></i> {{question.date}}
+                       | <i class="icon-comment color-green"></i> <a href="/questions/{{question.key().id()}}">{{question.numanswers}} απαντήσεις</a>
+                    <span><i class="icon-user color-green"></i> Από: {{question.author}} </span>
+                  </p> 
+                </div>
+            </div> 
+     
+            {% endfor %}
+    </div>   
+         <!-- //End Our Clients -->
+     </div>
+	  
+		 
+
+		 
+         <div class="span3 pull-right">
+                <a class="twitter-timeline" height="420" data-dnt="true" href="https://twitter.com/okfngr" data-widget-id="341143324931006466">Tweets by @okfngr</a>
+                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        </div>
+        </div><!--/row-fluid-->
+         <!-- //End Service Blokcs -->
+
+	 </div><!--/container-->		
+ </div><!--/body-->
+
+ <!--=== Footer ===-->
+  <div class="footer">
+     <div class="container">
+
+         <div class="row-fluid">
+
+            <div class="span4">
+                 <div class="headline"><h3>Πληροφορίες </h3></div>   
+                 <ul class="unstyled">
+                     <li><a href="/aboutus">Ποιοί Είμαστε;</a></li>
+                     <li><a href="/applications">Εφαρμογές για ανοιχτά δεδομένα</a></li>
+                     <li><a href="/faq">Συχνές ερωτήσεις</a></li>
+                     <li><a href="/opendata">Ανοιχτά Δεδομένα</a></li>
+                     <li><a href="/statistics">Στατιστικά</a></li>
+                 </ul>
+             </div><!--/span4-->
+             <div class="span4">      
+                 <!-- Newsletter -->
+                 <div class="headline"><h3>Newsletter </h3></div>   
+                 <p>Κάντε εγγραφή στο Newsletter και μάθετε πρώτοι τα νέα μας </p>
+                 <form action="/newsletter" method="post" class="form-inline" />
+                     <div class="input-append">
+                         <input type="email" placeholder="Email Address" class="span8 border-radius-none" name="email" />
+                         <button class="btn-u">Εγγραφή </button>
+                     </div>
+                 </form>                            
+             </div>
+
+             <div class="span4">
+                 <ul class="unstyled">
+                    <li><a href="http://gr.okfn.org"><img src="./assets/img/okflogo.png"/></a></li>
+                     <li><p>An Open Knowledge Foundation Greece project.</p></li>
+                     <li><p>© 2013 want2know</li>
+                     <li><!-- Open Knowledge Link -->
+                        <a href="http://opendefinition.org/">
+                        <img alt="This material is Open Knowledge" border="0"
+                        src="http://assets.okfn.org/images/ok_buttons/ok_80x15_blue.png" /></a>
+                        <!-- /Open Knowledge Link --><!-- Open Content Link -->
+<a href="http://opendefinition.org/">
+  <img alt="This material is Open Content" border="0"
+  src="http://assets.okfn.org/images/ok_buttons/oc_80x15_blue.png" />
+</a>
+<!-- /Open Content Link -->
+</li>
+
+                 </ul>
+             </div><!--/span4-->
+         </div><!--/row-fluid-->    
+
+     </div><!--/container-->    
+ </div><!--/footer-->   
+
+ <!--=== copyright ===-->
+ <div class="copyright">
+     <div class="container">
+
+         <div class="row-fluid">
+             <div class="span8">                        
+                <p>2013 &copy; want2know <a href="/privacy">Privacy Policy </a> |  <a href="/termsofuse">Terms of use </a></p>             
+             </div>
+            
+         </div><!--/row-fluid-->
+
+     </div><!--/container-->    
+ </div><!--/copyright-->    
+ <!-- JS and jQuery -->			
+ <script type="text/javascript" src="./assets/js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="./assets/js/jquery.cycle.all.js"></script>
+ <script type="text/javascript" src="./assets/bootstrap/js/bootstrap.min.js"></script>	
+ <script type="text/javascript" src="./assets/fancybox/source/jquery.fancybox.pack.js"></script>
+ <script type="text/javascript" src="./assets/elastislide/js/jquery.elastislide.js"></script>
+ <script type="text/javascript" src="./assets/flexslider/jquery.flexslider-min.js"></script>
+ <script type="text/javascript" src="./assets/js/app.js"></script>
+ <script type="text/javascript" src="./assets/js/jquery.cookiebar.js"></script>
+ <script type="text/javascript">
+            $(document).ready(function(){
+                $.cookieBar({
+                });
+            });
+ </script>
+
+ <!--[if lt IE 9]>
+	<script src="./assets/js/respond.js"></script>
+<![endif]-->
+ <script type="text/javascript">
+jQuery(document).ready(function() {
+  	App.init();
+});
+</script>	
+<script type="text/javascript">
+$('#s6').cycle({
+    fx:     'scrollUp',
+    timeout: 5000,
+    delay:  -2000
+});
+</script>
+
+ </body>
+ </html>	 
